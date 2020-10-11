@@ -27,7 +27,8 @@ All components run as docker container. Installation steps include
 
 #### Install Postgres and create keychat db.
 
-```git clone    https://github.com/madhutry/keychat-db.git
+```
+git clone    https://github.com/madhutry/keychat-db.git
 cd keychat-db
 docker pull postgres
 rm -rf mkdir ${HOME}/dockervol/
@@ -37,13 +38,16 @@ docker run -d \
     -e POSTGRES_PASSWORD=keychatusr1 \
     -v ${HOME}/dockervol/postgres-data-prod/:/var/lib/postgresql/data \
     -p 5432:5432\
-    postgres```
+    postgres
+```
     
 ##### Check DB:
-```docker exec -it prod-pg /bin/bash
+```
+docker exec -it prod-pg /bin/bash
 su - postgres
 psql -U keychatusr1 keychatdb
-\dt```
+\dt
+```
 
 #### Install Synapse and configure it.
 
